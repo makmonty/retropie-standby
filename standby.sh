@@ -1,2 +1,4 @@
 #!/bin/sh
-./display-switch.sh off
+BASEDIR=$(dirname "$0")
+$BASEDIR/display-switch.sh off
+bluetoothctl disconnect
