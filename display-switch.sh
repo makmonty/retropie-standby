@@ -5,19 +5,19 @@
 is_off ()
 {
 	# tvservice -s | grep "TV is off" >/dev/null
-	vcgencmd display_power | grep "display_power=0"
+	vcgencmd display_power | grep "display_power=0" >/dev/null
 }
 
 case $1 in
 	off)
 		# tvservice -o
-		vcgencmd display_power 0
+		vcgencmd display_power 0 >/dev/null
 	;;
 	on)
 		if is_off
 		then
 			# tvservice -p
-			vcgencmd display_power 1
+			vcgencmd display_power 1 >/dev/null
 			# curr_vt=`fgconsole`
 			# if [ "$curr_vt" = "1" ]
 			# then
