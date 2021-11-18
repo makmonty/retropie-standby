@@ -23,11 +23,12 @@ cd /home/pi/scripts
 git clone https://github.com/makmonty/retropie-standby
 ```
 
-Copy the content of the file `udev.rules` into a file in `/etc/udev/rules.d/`
+Copy the content of the file `udev.rules` into a file in `/etc/udev/rules.d/` and restart the udev service.
 
 ```
-cd /home/pi/retropie-standby
-sudo cat udev.rules > /etc/udev/rules.d/99-retropie-standby.rules
+cd /home/pi/retroie-standby
+sudo cp udev.rules /etc/udev/rules.d/99-retropie-standby.rules
+sudo service udev restart
 ```
 
 ## Plans
